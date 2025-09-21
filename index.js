@@ -37,8 +37,7 @@ setInterval(changeImage, 3000); */
 
 const images = [
     "./photos/elephants1.png",
-    "./photos/wildebeest2.png",
-    "./photos/lions.png"
+    "./photos/lion_cub.png"
 ];
 
 const slideshow = document.getElementById("slideshow");
