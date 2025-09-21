@@ -1,10 +1,10 @@
 body {
     font-family: "Verdana", "Geneva", sans-serif;
     font-weight: 300;
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
     color: #555555;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .app {
@@ -12,15 +12,11 @@ body {
 }
 
 .header {
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
     font-weight: 400;
     font-size: 20px;
     letter-spacing: 2px;
-    color: #555555;
-    margin: 0 auto 2.5rem auto; /* center horizontally with bottom margin */
-    padding: 20px;
-    max-width: calc(220px + 40px + 1fr + 40px); /* width of sidebar + gap + main content + gaps */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: #1B1B42;
 }
 
 .centre {
