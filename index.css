@@ -38,13 +38,13 @@ body {
     padding: 10px 0;
     cursor: pointer;
     font-size: 14px;
-    background: none;      /* remove background */
-    border: none;          /* remove border */
+    background: none;      
+    border: none;          
 }
 
 .nav-button:hover {
     background-color: #e0e0e0;
-    color: #000;
+    color: #EDE30E;
 }
 
 .research-drop-one {
