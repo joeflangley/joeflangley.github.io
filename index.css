@@ -8,12 +8,11 @@ body {
 }
 
 .app {
-    padding: 5rem 17.5vw;
+    padding: 5rem 10vw;
 }
 
 .header {
-    background-color: #f5f5f5;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 20px;
     letter-spacing: 2px;
     color: #002D04;
