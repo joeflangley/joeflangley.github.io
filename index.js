@@ -14,7 +14,7 @@ projectButton.addEventListener("click", () => {
     }
 });
 
-// List of image file paths
+/* // List of image file paths
 const images = [
     "./photos/elephants1.png",
     "./photos/lion_cub.png"
@@ -33,4 +33,49 @@ function changeImage() {
 }
 
 // Change image every 5 seconds (5000ms)
-setInterval(changeImage, 3000);
+setInterval(changeImage, 3000); */
+
+const images = [
+    "./photos/elephants1.png",
+    "./photos/wildebeest2.png",
+    "./photos/lions.png"
+];
+
+const slideshow = document.getElementById("slideshow");
+const dotsContainer = document.getElementById("dots");
+
+let currentIndex = 0;
+
+// Create a dot for each image
+images.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => showImage(index));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".dot");
+
+// Function to show specific image
+function showImage(index) {
+    currentIndex = index;
+    slideshow.src = images[currentIndex];
+    updateDots();
+}
+
+// Function to update dot highlighting
+function updateDots() {
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+    });
+}
+
+// Auto-change every 5s
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}, 5000);
+
+// Show first image + highlight first dot
+showImage(currentIndex);
+
