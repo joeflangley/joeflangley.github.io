@@ -12,12 +12,14 @@ body {
 }
 
 .header {
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 20px;
     letter-spacing: 2px;
-    color: #042A2B;
-    margin-bottom: 2.5rem;
+    color: #555555;
+    margin: 0 auto 2.5rem auto; /* center horizontally with bottom margin */
+    padding: 20px;
+    max-width: calc(220px + 40px + 1fr + 40px); /* width of sidebar + gap + main content + gaps */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
