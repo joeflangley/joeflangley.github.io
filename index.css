@@ -49,6 +49,13 @@ body {
     font-weight: bold;
 }
 
+.sub-heading {
+    font-weight: bold;
+    margin: 10px 0 5px 5px;
+    font-size: 0.8rem;
+    color: #002D04;
+}
+
 .research-drop-one {
     display: none;
     margin-left: 10px;
