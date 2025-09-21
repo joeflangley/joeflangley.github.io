@@ -1,27 +1,24 @@
 body {
-    font-family: 'SansSerifFLF', sans-serif;
+    font-family: "Verdana", "Geneva", sans-serif;
+    font-weight: 300;
     background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    padding: 5rem 17.5vw;
 }
 
 .header {
     background-color: #ffffff;
-    padding: 20px 40px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header h1 {
-    margin: 0;
+    font-weight: 400;
     font-size: 2rem;
+    letter-spacing: 2px;
+    color: #042A2B;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .centre {
