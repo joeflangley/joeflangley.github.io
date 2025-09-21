@@ -58,15 +58,9 @@ body {
 }
 
 .research-drop-one {
-    display: none;       /* hidden by default */
-    position: absolute;  /* remove it from normal flow */
-    top: 100%;           /* position right below the PROJECTS button */
-    left: 0;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    z-index: 10;         /* ensure it appears above other elements */
+    display: none;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 .research-drop-one .nav-button {
