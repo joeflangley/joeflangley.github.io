@@ -20,13 +20,12 @@ body {
 
 .centre {
     display: flex;
-    margin: 20px 40px;
     gap: 40px;
 }
 
 .centre-left {
     width: 220px;
-    color: #111111;
+    color: #FF69B4;
 }
 
 .nav-button {
