@@ -81,8 +81,10 @@ body {
 }
 
 .dots {
-    text-align: center;
-    margin-top: 10px;
+    display: flex;             /* use flexbox */
+    justify-content: center;   /* centre horizontally */
+    align-items: center;       /* keep them vertically aligned */
+    margin-top: 10px;          /* space above the dots */
 }
 
 .dot {
@@ -97,7 +99,7 @@ body {
 }
 
 .dot.active {
-    background-color: #CF112A; /* highlight color */
+    background-color: #002D04;
 }
 
 @media screen and (max-width: 768px) {
