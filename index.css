@@ -39,12 +39,14 @@ body {
     cursor: pointer;
     font-size: 14px;
     background: none;      
-    border: none;          
+    border: none;  
+    transition: font-weight 0.2s ease;
 }
 
 .nav-button:hover {
     background-color: #e0e0e0;
-    color: #EDE30E;
+    color: #002D04;
+    font-weight: bold;
 }
 
 .research-drop-one {
