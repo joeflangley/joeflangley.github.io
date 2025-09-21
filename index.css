@@ -80,6 +80,26 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #CF112A; /* highlight color */
+}
+
 @media screen and (max-width: 768px) {
     .centre {
         flex-direction: column;
