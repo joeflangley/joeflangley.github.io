@@ -14,10 +14,10 @@ body {
 .header {
     font-family: "Verdana", "Geneva", sans-serif;
     font-weight: 100;
-    font-size: 1rem;
+    font-size: 1.275rem;
     letter-spacing: 2px;
     color: #002D04;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .centre {
@@ -61,7 +61,7 @@ body {
     margin-top: 20px;
     font-size: 0.85rem;
     color: #777;
-    text-align: center;
+    text-align: right;
 }
 
 .main-image {
