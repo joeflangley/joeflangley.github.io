@@ -1,6 +1,24 @@
+function toggleDropdown(buttonId, dropdownId) {
+  const button = document.getElementById(buttonId);
+  const dropdown = document.getElementById(dropdownId);
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault(); // stop page jumping
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+  });
+}
+
+/*// Main Projects dropdown
+toggleDropdown("projects-button", "projects-dropdown");
+
+// Sub-dropdowns
+toggleDropdown("species-button", "species-dropdown");
+toggleDropdown("areas-button", "areas-dropdown");
+
+
 // Get the dropdown button and the div that contains project links
 const projectButton = document.getElementById("research-drop-one-button");
-const projectDropdown = document.getElementById("research-drop-one");
+const projectDropdown = document.getElementById("research-drop-one");*/
 
 // Hide the dropdown by default
 projectDropdown.style.display = "none";
