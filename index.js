@@ -13,3 +13,24 @@ projectButton.addEventListener("click", () => {
         projectDropdown.style.display = "none";  // Hide the dropdown
     }
 });
+
+// List of image file paths
+const images = [
+    "./photos/elephants1.png",
+    "./photos/lion_cub.png"
+];
+
+// Get the <img> element
+const slideshow = document.getElementById("slideshow");
+
+// Index to track the current image
+let currentIndex = 0;
+
+// Function to change the image
+function changeImage() {
+    currentIndex = (currentIndex + 1) % images.length; // loop back to start
+    slideshow.src = images[currentIndex];
+}
+
+// Change image every 5 seconds (5000ms)
+setInterval(changeImage, 3000);
