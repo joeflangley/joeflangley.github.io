@@ -67,10 +67,11 @@ body {
 }
 
 .footer {
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: #002D04;
-    text-align: center;
+    text-align: right;      /* aligns text to the right */
+    margin-top: 20px;       /* space above the footer */
+    font-size: 0.85rem;     /* smaller font */
+    color: #002D04;            
+    padding-right: 20px;    /* optional spacing from edge */
 }
 
 .main-image {
