@@ -36,6 +36,8 @@ body {
     padding: 10px 0;
     cursor: pointer;
     font-size: 14px;
+    background: none;      /* remove background */
+    border: none;          /* remove border */
 }
 
 .nav-button:hover {
