@@ -14,8 +14,8 @@ body {
 .header {
     font-family: "Verdana", "Geneva", sans-serif;
     font-weight: 100;
-    font-size: 1.275rem;
-    letter-spacing: 2px;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
     color: #002D04;
     margin-bottom: 1.5rem;
 }
@@ -40,7 +40,7 @@ body {
     font-size: 14px;
     background: none;      
     border: none;  
-    transition: font-weight 0.2s ease;
+    /* transition: font-weight 0.2s ease; */
 }
 
 .nav-button:hover {
