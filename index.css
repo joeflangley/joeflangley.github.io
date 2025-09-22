@@ -197,49 +197,6 @@ body {
     }
 } */
 
-.header {
-  position: relative;
-  color: #39ff14; /* neon green */
-  text-shadow: 
-    0 0 2px #39ff14,
-    0 0 5px #39ff14,
-    0 0 10px #39ff14;
-  animation: glitch 1s linear 1; /* play once */
-}
-
-.header span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #39ff14;
-  opacity: 0.8;
-}
-
-/* Top slice */
-.header span:first-child {
-  animation: glitch 1s linear 1;
-  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-  transform: translate(-0.04em, -0.03em);
-}
-
-/* Bottom slice */
-.header span:last-child {
-  animation: glitch 1s linear 1 reverse;
-  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-  transform: translate(0.04em, 0.03em);
-}
-
-/* Simple glitch movement */
-@keyframes glitch {
-  0%   { transform: translate(0, 0); }
-  20%  { transform: translate(-2px, -2px); }
-  40%  { transform: translate(2px, 1px); }
-  60%  { transform: translate(-1px, 2px); }
-  80%  { transform: translate(1px, -1px); }
-  100% { transform: translate(0, 0); }
-}
-
-
 @media screen and (max-width: 768px) {
 
     /* Header stacks vertically */
