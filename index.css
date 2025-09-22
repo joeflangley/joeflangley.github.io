@@ -66,6 +66,14 @@ body {
     border: none;  
 }
 
+.profile-pic {
+    width: 50px;          /* adjust size as needed */
+    height: 50px;         /* same as width to keep square */
+    border-radius: 50%;   /* makes it circular */
+    object-fit: cover;    /* crops the image nicely if it’s not square */
+    border: 2px solid #002D04; /* optional border matching your theme */
+}
+
 .dropdown {
   display: none;
   margin-left: 15px;
