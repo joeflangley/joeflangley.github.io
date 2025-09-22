@@ -200,58 +200,60 @@ body {
 .header h1 {
   position: relative;
   font-size: 2rem;
-  color: #002D04; /* your main text color */
-  animation: glitch 1s linear 1; /* play once */
+  color: #002D04;
+  text-shadow: 0 0 2px #39ff14, 0 0 5px #39ff14;
+  animation: glitch-flicker 2s infinite;
 }
 
-/* Green ghost layers */
+/* Ghost Layers */
 .header h1::before,
 .header h1::after {
-  content: "Joe F. Langley"; /* same text */
+  content: "Joe F. Langley";
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  color: #39ff14; /* neon green */
 }
 
 .header h1::before {
-  left: 2px;
-  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
-  animation: glitchTop 0.8s infinite linear alternate-reverse;
+  animation: glitch-top 1.5s infinite linear alternate-reverse;
 }
 
 .header h1::after {
-  left: -2px;
-  text-shadow: 0 0 5px #39ff14, 0 0 15px #39ff14;
-  animation: glitchBottom 0.8s infinite linear alternate-reverse;
+  animation: glitch-bottom 1.3s infinite linear alternate-reverse;
 }
 
-@keyframes glitch {
-  0% { text-shadow: none; }
-  20% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; }
-  40% { text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; }
-  60% { text-shadow: 0 0 15px #39ff14, 0 0 25px #39ff14; }
-  80% { text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; }
-  100% { text-shadow: none; }
+/* Base glow flicker */
+@keyframes glitch-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 2px #39ff14, 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+  }
+  20%, 24%, 55% {
+    text-shadow: 0 0 5px #39ff14, 0 0 15px #39ff14, 0 0 30px #39ff14;
+  }
 }
 
-@keyframes glitchTop {
-  0% { clip: rect(0, 900px, 0, 0); }
-  20% { clip: rect(0, 900px, 20px, 0); }
-  40% { clip: rect(0, 900px, 5px, 0); }
-  60% { clip: rect(0, 900px, 15px, 0); }
-  100% { clip: rect(0, 900px, 0, 0); }
+/* Top ghost glitch */
+@keyframes glitch-top {
+  0%   { clip: rect(0, 9999px, 0, 0); transform: translate(2px, -2px) skewX(-5deg); }
+  20%  { clip: rect(5px, 9999px, 25px, 0); transform: translate(-2px, 2px) skewX(3deg); }
+  40%  { clip: rect(15px, 9999px, 40px, 0); transform: translate(2px, -1px); }
+  60%  { clip: rect(30px, 9999px, 60px, 0); transform: translate(-3px, 1px) skewX(-8deg); }
+  80%  { clip: rect(10px, 9999px, 50px, 0); transform: translate(1px, -1px) skewX(5deg); }
+  100% { clip: rect(0, 9999px, 0, 0); transform: none; }
 }
 
-@keyframes glitchBottom {
-  0% { clip: rect(0, 900px, 0, 0); }
-  20% { clip: rect(10px, 900px, 30px, 0); }
-  40% { clip: rect(5px, 900px, 25px, 0); }
-  60% { clip: rect(15px, 900px, 35px, 0); }
-  100% { clip: rect(0, 900px, 0, 0); }
+/* Bottom ghost glitch */
+@keyframes glitch-bottom {
+  0%   { clip: rect(0, 9999px, 0, 0); transform: translate(-2px, 2px) skewX(5deg); }
+  25%  { clip: rect(10px, 9999px, 35px, 0); transform: translate(3px, -1px); }
+  50%  { clip: rect(20px, 9999px, 60px, 0); transform: translate(-1px, 2px) skewX(-3deg); }
+  75%  { clip: rect(15px, 9999px, 40px, 0); transform: translate(2px, -3px) skewX(7deg); }
+  100% { clip: rect(0, 9999px, 0, 0); transform: none; }
 }
 
 @media screen and (max-width: 768px) {
