@@ -176,7 +176,7 @@ body {
     margin-top: calc(10vh - 1.5rem);
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .centre {
         flex-direction: column;
         margin: 20px;
@@ -194,5 +194,52 @@ body {
     .nav-button {
         margin: 5px;
         flex: 1 1 40%;
+    }
+} */
+
+@media screen and (max-width: 768px) {
+
+    /* Header stacks vertically */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header-left {
+        flex-direction: row; /* keep profile + name inline */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header-right {
+        justify-content: center;
+        flex-wrap: wrap; /* icons wrap if too many */
+        gap: 10px;
+    }
+
+    /* Main layout stacks nav + main image */
+    .centre {
+        flex-direction: column;
+        gap: 20px;
+        margin: 10px;
+    }
+
+    .centre-left {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .nav-button {
+        flex: 1 1 40%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .main-image {
+        width: 100%;
     }
 }
