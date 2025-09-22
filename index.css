@@ -10,7 +10,6 @@ body {
 .app {
     padding: 5rem 12.5vw;
 }
-
 .header {
     font-family: "Verdana", "Geneva", sans-serif;
     font-weight: 100;
@@ -20,7 +19,40 @@ body {
     margin-bottom: 0rem;
     display: flex;              
     align-items: center;        
+    justify-content: space-between; /* push left + right apart */
     gap: 15px;  
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* space between profile pic and name */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* space between social icons */
+}
+
+.profile-pic {
+    width: 90px;     
+    height: 90px;         
+    border-radius: 50%;   
+    object-fit: cover;   
+    border: 2px solid #002D04;
+}
+
+.social-icon {
+    width: 24px;                     
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
 }
 
 .centre {
@@ -81,14 +113,6 @@ body {
     cursor: pointer;
     font-size: 14px;     
     border: none;  
-}
-
-.profile-pic {
-    width: 90px;     
-    height: 90px;         
-    border-radius: 50%;   
-    object-fit: cover;   
-    border: 2px solid #002D04;
 }
 
 .dropdown {
