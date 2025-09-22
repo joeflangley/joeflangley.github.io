@@ -62,20 +62,13 @@ body {
     text-decoration: none;
     padding: 10px 0;
     cursor: pointer;
-    font-size: 14px;
-    background: none;      
+    font-size: 14px;     
     border: none;  
-}
-
-.nav-button-active:hover {
-    background-color: #002D04;
-    color: #EBEDD8;             
-    font-weight: normal;
 }
 
 .dropdown {
   display: none;
-  margin-left: 15px; /* indent child dropdowns */
+  margin-left: 15px;
 }
 
 .footer {
