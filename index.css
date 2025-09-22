@@ -78,11 +78,11 @@ body {
     font-weight: bold;
     display: block;
     text-decoration: none;
-    padding: 10px 0;
     cursor: pointer;
     font-size: 14px;     
     border: none;  
 }
+
 .profile-pic {
     width: 90px;     
     height: 90px;         
@@ -93,6 +93,11 @@ body {
 
 .dropdown {
   display: none;
+  margin-left: 15px;
+}
+
+.dropdown-active {
+  display: block;
   margin-left: 15px;
 }
 
