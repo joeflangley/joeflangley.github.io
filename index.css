@@ -18,6 +18,9 @@ body {
     letter-spacing: 3.5px;
     color: #002D04;
     margin-bottom: 0rem;
+    display: flex;              
+    align-items: center;        
+    gap: 15px;  
 }
 
 .centre {
