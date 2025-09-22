@@ -16,7 +16,8 @@ toggleDropdown("projects-button", "projects-dropdown");
 
 const images = [
     "./photos/elephants1.png",
-    "./photos/lion_cub.png"
+    "./photos/lion_cub.png",
+    "./photos/cheetahs.png"
 ];
 
 const slideshow = document.getElementById("slideshow");
