@@ -17,7 +17,7 @@ body {
     font-size: 1rem;
     letter-spacing: 3.5px;
     color: #002D04;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0rem;
 }
 
 .centre {
@@ -72,7 +72,7 @@ body {
     border-radius: 50%;   
     object-fit: cover;   
     border: 2px solid #002D04;
-    margin: 0.25rem 0.25rem 0 0;
+    margin: 0.25rem 4.25rem 0 0;
 }
 
 .dropdown {
