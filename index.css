@@ -58,6 +58,13 @@ body {
     background-color: #002D04; 
     color: #EBEDD8;               
     font-weight: bold;
+    display: block;
+    text-decoration: none;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 14px;
+    background: none;      
+    border: none;  
 }
 
 .nav-button-active:hover {
