@@ -14,10 +14,10 @@ body {
 .header {
     font-family: "Verdana", "Geneva", sans-serif;
     font-weight: 100;
-    font-size: 1.25rem;
-    letter-spacing: 1.5px;
+    font-size: 1rem;
+    letter-spacing: 3.5px;
     color: #002D04;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .centre {
