@@ -11,8 +11,8 @@ function toggleDropdown(buttonId, dropdownId) {
 // Main Projects dropdown
 toggleDropdown("projects-button", "projects-dropdown");
 
-// Sub-dropdowns
-toggleDropdown("places-button", "places-dropdown");
+// // Sub-dropdowns
+// toggleDropdown("places-button", "places-dropdown");
 
 const images = [
     "./photos/elephants1.png",
