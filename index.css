@@ -69,6 +69,20 @@ body {
     border: none;  
 }
 
+#projects-dropdown .nav-button-active {
+    padding: 4px 10px;   
+    margin: 2px 0;    
+    line-height: 1.25; 
+    background-color: #002D04; 
+    color: #EBEDD8;               
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 14px;     
+    border: none;  
+}
 .profile-pic {
     width: 90px;     
     height: 90px;         
