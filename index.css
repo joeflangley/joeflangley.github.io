@@ -34,7 +34,6 @@ body {
     color: #002D04;
     display: block;
     text-decoration: none;
-    color: #002D04;
     padding: 10px 0;
     cursor: pointer;
     font-size: 14px;
@@ -47,6 +46,18 @@ body {
     background-color: #002D04;
     color: #EBEDD8;
     font-weight: bold;
+}
+
+.nav-button.active {
+    background-color: #002D04; 
+    color: #EBEDD8;               
+    font-weight: bold;
+}
+
+.nav-button.active:hover {
+    background-color: #002D04;
+    color: #EBEDD8;             
+    font-weight: normal;
 }
 
 .dropdown {
