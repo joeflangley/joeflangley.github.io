@@ -79,6 +79,7 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
   margin-top: 0.25rem;
+  min-height: 1.2em; 
 }
 
 /* Caret blink */
