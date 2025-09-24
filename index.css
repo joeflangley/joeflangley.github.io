@@ -46,54 +46,37 @@ body {
 /* Title block (wraps both name + subtitle) */
 .title-block {
   display: flex;
-  flex-direction: column; /* stack name above subtitle */
+  flex-direction: column;
   justify-content: center;
+  gap: 4px;
 }
 
-/* Typewriter text */
+/* Base typewriter text (NO caret) */
 #typewriter-name,
 #typewriter-subtitle {
-  font-family: "Courier New", monospace;;
+  font-family: "Verdana", "Geneva", sans-serif;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #002D04; /* caret */
-  animation: blink-caret 0.75s step-end infinite;
   margin: 0;
-}
-
-.typing {
-  border-right: 2px solid #39ff14; /* caret color */
-  animation: blink-caret 0.75s step-end infinite;
 }
 
 /* Name style */
 #typewriter-name {
   font-size: 2rem;
   color: #002D04;
+  line-height: 1;
 }
 
-/* Subtitle style */
+/* Subtitle style — reserve space so layout doesn't shift when it types */
 #typewriter-subtitle {
   font-size: 1rem;
   color: #002D04;
   font-weight: 300;
   letter-spacing: 1px;
   margin-top: 0.25rem;
-  min-height: 1.2em; 
+  min-height: 1.2em; /* reserve one line's height to prevent jumping */
+  line-height: 1;
 }
-
-/* Caret blink */
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #002D04; }
-}
-
-
-
-
-
-
-
 
 .social-icon {
     width: 24px;                     
