@@ -43,7 +43,14 @@ body {
     border: 2px solid #002D04;
 }
 
-/* Shared typewriter style */
+/* Title block (wraps both name + subtitle) */
+.title-block {
+  display: flex;
+  flex-direction: column; /* stack name above subtitle */
+  justify-content: center;
+}
+
+/* Typewriter text */
 #typewriter-name,
 #typewriter-subtitle {
   font-family: "Courier New", monospace;
@@ -52,29 +59,35 @@ body {
   border-right: 2px solid #39ff14; /* caret */
   animation: blink-caret 0.75s step-end infinite;
   margin: 0;
-  display: inline-block;
 }
 
 /* Name style */
 #typewriter-name {
   font-size: 2rem;
-  color: #39ff14; /* neon green */
+  color: #39ff14;
 }
 
 /* Subtitle style */
 #typewriter-subtitle {
   font-size: 1rem;
-  color: #002D04; /* dark green */
-  margin-top: 0.25rem;
+  color: #002D04;
   font-weight: 300;
   letter-spacing: 1px;
+  margin-top: 0.25rem;
 }
 
-/* Caret blinking */
+/* Caret blink */
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: #39ff14; }
 }
+
+
+
+
+
+
+
 
 .social-icon {
     width: 24px;                     
