@@ -53,10 +53,10 @@ body {
 /* Typewriter text */
 #typewriter-name,
 #typewriter-subtitle {
-  font-family: "Courier New", monospace;
+  font-family: "Verdana", "Geneva", sans-serif;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #39ff14; /* caret */
+  border-right: 2px solid #002D04; /* caret */
   animation: blink-caret 0.75s step-end infinite;
   margin: 0;
 }
@@ -64,7 +64,7 @@ body {
 /* Name style */
 #typewriter-name {
   font-size: 2rem;
-  color: #39ff14;
+  color: #002D04;
 }
 
 /* Subtitle style */
