@@ -1,3 +1,34 @@
+const nameText = "Joe F. Langley";
+const subtitleText = "Conservation Scientist";
+let i = 0;
+let j = 0;
+const speed = 120; // typing speed
+
+function typeWriterName() {
+  if (i < nameText.length) {
+    document.getElementById("typewriter-name").textContent += nameText.charAt(i);
+    i++;
+    setTimeout(typeWriterName, speed);
+  } else {
+    // Start subtitle after name finishes
+    setTimeout(typeWriterSubtitle, 500);
+  }
+}
+
+function typeWriterSubtitle() {
+  if (j < subtitleText.length) {
+    document.getElementById("typewriter-subtitle").textContent += subtitleText.charAt(j);
+    j++;
+    setTimeout(typeWriterSubtitle, speed);
+  } else {
+    // Stop caret blinking on subtitle after finished typing
+    document.getElementById("typewriter-subtitle").style.borderRight = "none";
+  }
+}
+
+window.onload = typeWriterName;
+
+
 function toggleDropdown(buttonId, dropdownId) {
   const button = document.getElementById(buttonId);
   const dropdown = document.getElementById(dropdownId);
