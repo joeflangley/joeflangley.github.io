@@ -1,9 +1,9 @@
 body {
     font-family: "Courier New", monospace;
-    font-weight: 100;
+    font-weight: 200;
     background-color: #EBEDD8;
     color: #002D04;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -12,7 +12,7 @@ body {
 }
 .header {
     font-family: "Courier New", monospace;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 1rem;
     letter-spacing: 3.5px;
     color: #002D04;
