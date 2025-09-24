@@ -1,36 +1,29 @@
+// type-sequence.js (or paste into index.js)
 const nameText = "Joe F. Langley";
 const subtitleText = "Conservation Scientist";
 const speed = 90; // ms per character
 
-function typeInto(el, text, callback) {
-  el.textContent = "";          // start empty
-  el.classList.add("typing");   // show caret
+function typeText(el, text, speed, done) {
+  el.textContent = ""; // start empty
   let i = 0;
-
-  function step() {
-    if (i < text.length) {
-      el.textContent += text.charAt(i);
-      i++;
-      setTimeout(step, speed);
-    } else {
-      el.classList.remove("typing"); // remove caret when finished
-      if (callback) setTimeout(callback, 400); // pause before next line
+  const t = setInterval(() => {
+    el.textContent += text.charAt(i++);
+    if (i >= text.length) {
+      clearInterval(t);
+      if (done) setTimeout(done, 300); // small pause before next line
     }
-  }
-
-  step();
+  }, speed);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const nameEl = document.getElementById("typewriter-name");
   const subEl = document.getElementById("typewriter-subtitle");
 
-  // First type the name, then the subtitle
-  typeInto(nameEl, nameText, () => {
-    typeInto(subEl, subtitleText);
+  // Type name first, then subtitle; NO cursor involved at any point
+  typeText(nameEl, nameText, speed, () => {
+    typeText(subEl, subtitleText, speed);
   });
 });
-
 
 
 function toggleDropdown(buttonId, dropdownId) {
