@@ -53,12 +53,17 @@ body {
 /* Typewriter text */
 #typewriter-name,
 #typewriter-subtitle {
-  font-family: "Verdana", "Geneva", sans-serif;
+  font-family: "Courier New", monospace;;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid #002D04; /* caret */
   animation: blink-caret 0.75s step-end infinite;
   margin: 0;
+}
+
+.typing {
+  border-right: 2px solid #39ff14; /* caret color */
+  animation: blink-caret 0.75s step-end infinite;
 }
 
 /* Name style */
@@ -79,7 +84,7 @@ body {
 /* Caret blink */
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-color: #39ff14; }
+  50% { border-color: #002D04; }
 }
 
 
