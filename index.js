@@ -1,32 +1,36 @@
 const nameText = "Joe F. Langley";
 const subtitleText = "Conservation Scientist";
-let i = 0;
-let j = 0;
-const speed = 120; // typing speed
+const speed = 90; // ms per character
 
-function typeWriterName() {
-  if (i < nameText.length) {
-    document.getElementById("typewriter-name").textContent += nameText.charAt(i);
-    i++;
-    setTimeout(typeWriterName, speed);
-  } else {
-    // Start subtitle after name finishes
-    setTimeout(typeWriterSubtitle, 500);
+function typeInto(el, text, callback) {
+  el.textContent = "";          // start empty
+  el.classList.add("typing");   // show caret
+  let i = 0;
+
+  function step() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(step, speed);
+    } else {
+      el.classList.remove("typing"); // remove caret when finished
+      if (callback) setTimeout(callback, 400); // pause before next line
+    }
   }
+
+  step();
 }
 
-function typeWriterSubtitle() {
-  if (j < subtitleText.length) {
-    document.getElementById("typewriter-subtitle").textContent += subtitleText.charAt(j);
-    j++;
-    setTimeout(typeWriterSubtitle, speed);
-  } else {
-    // Stop caret blinking on subtitle after finished typing
-    document.getElementById("typewriter-subtitle").style.borderRight = "none";
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const nameEl = document.getElementById("typewriter-name");
+  const subEl = document.getElementById("typewriter-subtitle");
 
-window.onload = typeWriterName;
+  // First type the name, then the subtitle
+  typeInto(nameEl, nameText, () => {
+    typeInto(subEl, subtitleText);
+  });
+});
+
 
 
 function toggleDropdown(buttonId, dropdownId) {
