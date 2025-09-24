@@ -1,5 +1,5 @@
 body {
-    font-family: "Verdana", "Geneva", sans-serif;
+    font-family: "Courier New", monospace;
     font-weight: 100;
     background-color: #EBEDD8;
     color: #002D04;
@@ -11,7 +11,7 @@ body {
     padding: 5rem 12.5vw;
 }
 .header {
-    font-family: "Verdana", "Geneva", sans-serif;
+    font-family: "Courier New", monospace;
     font-weight: 100;
     font-size: 1rem;
     letter-spacing: 3.5px;
@@ -54,7 +54,7 @@ body {
 /* Base typewriter text (NO caret) */
 #typewriter-name,
 #typewriter-subtitle {
-  font-family: "Courier New", monospace
+  font-family: "Courier New", monospace;
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
