@@ -54,7 +54,7 @@ body {
 /* Base typewriter text (NO caret) */
 #typewriter-name,
 #typewriter-subtitle {
-  font-family: "Verdana", "Geneva", sans-serif;
+  font-family: "Courier New", monospace
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
@@ -74,7 +74,7 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
   margin-top: 0.25rem;
-  min-height: 1.2em; /* reserve one line's height to prevent jumping */
+  min-height: 1.3em; /* reserve one line's height to prevent jumping */
   line-height: 1;
 }
 
