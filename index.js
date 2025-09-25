@@ -1,29 +1,29 @@
-// type-sequence.js (or paste into index.js)
-const nameText = "Joe F. Langley";
-const subtitleText = "Conservation Scientist";
-const speed = 90; // ms per character
+const nameEl = document.getElementById("typewriter-name");
+const subEl = document.getElementById("typewriter-subtitle");
 
-function typeText(el, text, speed, done) {
-  el.textContent = ""; // start empty
-  let i = 0;
-  const t = setInterval(() => {
-    el.textContent += text.charAt(i++);
-    if (i >= text.length) {
-      clearInterval(t);
-      if (done) setTimeout(done, 300); // small pause before next line
-    }
-  }, speed);
-}
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+  // Typing effect only on index.html (or root "/")
+  const nameText = "Joe F. Langley";
+  const subtitleText = "Conservation Scientist";
+  const speed = 90;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const nameEl = document.getElementById("typewriter-name");
-  const subEl = document.getElementById("typewriter-subtitle");
+  function typeText(el, text, speed, done) {
+    el.textContent = "";
+    let i = 0;
+    const t = setInterval(() => {
+      el.textContent += text.charAt(i++);
+      if (i >= text.length) {
+        clearInterval(t);
+        if (done) setTimeout(done, 300);
+      }
+    }, speed);
+  }
 
-  // Type name first, then subtitle; NO cursor involved at any point
   typeText(nameEl, nameText, speed, () => {
     typeText(subEl, subtitleText, speed);
   });
-});
+}
+
 
 
 function toggleDropdown(buttonId, dropdownId) {
