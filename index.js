@@ -43,10 +43,10 @@ toggleDropdown("projects-button", "projects-dropdown");
 // toggleDropdown("places-button", "places-dropdown");
 
 const images = [
-    "./photos/leopard.png",
+    "./photos/BES_leopard.jpg",
     "./photos/elephants1.png",
     "./photos/lion_cub.png",
-    "./photos/giraffe.png",
+    "./photos/giraffe.jpg",
     "./photos/cheetahs.png"
 ];
 
