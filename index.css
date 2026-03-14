@@ -144,6 +144,17 @@ ul { list-style: none; }
   display: block;
 }
 
+.nav-socials img.social-svg {
+  width: 17px;
+  height: 17px;
+  opacity: 0.55;
+  transition: opacity 0.2s;
+  filter: brightness(0) invert(1);
+}
+.nav-socials a:hover img.social-svg {
+  opacity: 1;
+}
+
 /* Hamburger (mobile) */
 .hamburger {
   display: none;
