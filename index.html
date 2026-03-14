@@ -21,9 +21,9 @@
         <a href="#" class="nav-link" id="projects-toggle">Projects <span class="caret">▾</span></a>
         <ul class="nav-dropdown" id="projects-dropdown">
           <li><a href="./human_elephant_conflict.html">Human–Elephant Conflict</a></li>
-          <li><a href="./conservation_forecasting.html">Conservation Forecasting</a></li>
           <li><a href="./conflict_tree_of_life.html">Conflict Tree of Life</a></li>
           <li><a href="./protected_areas.html">Protected Areas</a></li>
+          <li><a href="./congo_peatlands.html">Congo Basin Peatlands</a></li>
         </ul>
       </li>
       <li><a href="./publications.html" class="nav-link">Publications</a></li>
@@ -45,11 +45,42 @@
     </button>
   </nav>
 
+  <!-- ── MOBILE MENU (outside <nav> so it cannot be clipped by it) ── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li>
+        <button class="mobile-projects-toggle" id="mobile-projects-toggle">
+          Projects <span class="caret">▾</span>
+        </button>
+        <ul class="mobile-projects-list" id="mobile-projects-list">
+          <li><a href="./human_elephant_conflict.html">Human–Elephant Conflict</a></li>
+          <li><a href="./conflict_tree_of_life.html">Conflict Tree of Life</a></li>
+          <li><a href="./protected_areas.html">Protected Areas</a></li>
+          <li><a href="./congo_peatlands.html">Congo Basin Peatlands</a></li>
+        </ul>
+      </li>
+      <li><a href="./publications.html">Publications</a></li>
+      <li><a href="mailto:jfl49@cam.ac.uk">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-socials">
+      <a href="https://bsky.app/profile/joelangley9.bsky.social" target="_blank">
+        <img src="./photos/bluesky.svg" alt="Bluesky" class="social-svg">
+      </a>
+      <a href="https://www.instagram.com/joelangley_wildlife/" target="_blank">
+        <img src="./photos/instagram.png" alt="Instagram" class="social-svg">
+      </a>
+      <a href="https://orcid.org/0009-0005-9686-6128" target="_blank">
+        <img src="./photos/orcid.svg" alt="ORCID" class="social-svg">
+      </a>
+    </div>
+  </div>
+
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-img-wrap">
-      <!-- Replace with your actual hero photo -->
-      <img src="./photos/elephant_comp.jpeg" alt="Fieldwork" class="hero-img" id="hero-img">
+      <img src="./photos/elephant_comp.jpeg" alt="Fieldwork" class="hero-img">
     </div>
     <div class="hero-overlay">
       <div class="hero-text">
@@ -58,8 +89,6 @@
         <p class="hero-sub">Human–Wildlife Conflict &nbsp;·&nbsp; Movement Ecology &nbsp;·&nbsp; Conservation Forecasting</p>
       </div>
     </div>
-    <!-- Slideshow dots -->
-    <div class="hero-dots" id="hero-dots"></div>
   </section>
 
   <!-- ── INTRO STRIP ── -->
@@ -83,7 +112,7 @@
           <span class="project-arrow">→</span>
         </div>
       </a>
-      
+
       <a href="./conflict_tree_of_life.html" class="project-card">
         <div class="project-card-inner">
           <span class="project-tag">2024 – Present</span>
@@ -92,7 +121,7 @@
           <span class="project-arrow">→</span>
         </div>
       </a>
-      
+
       <a href="./protected_areas.html" class="project-card">
         <div class="project-card-inner">
           <span class="project-tag">2023 – 2025</span>
@@ -101,7 +130,7 @@
           <span class="project-arrow">→</span>
         </div>
       </a>
-      
+
       <a href="./congo_peatlands.html" class="project-card">
         <div class="project-card-inner">
           <span class="project-tag">2022 – 2024</span>
