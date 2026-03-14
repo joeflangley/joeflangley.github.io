@@ -29,36 +29,21 @@ const topnav    = document.querySelector(".topnav");
 
 if (hamburger && topnav) {
   hamburger.addEventListener("click", () => {
-    topnav.classList.toggle("mobile-open");
-    // Animate hamburger → X
-    const spans = hamburger.querySelectorAll("span");
-    const isOpen = topnav.classList.contains("mobile-open");
+    const isOpen = topnav.classList.toggle("mobile-open");
+    const spans  = hamburger.querySelectorAll("span");
+
     if (isOpen) {
       spans[0].style.transform = "translateY(6.5px) rotate(45deg)";
       spans[1].style.opacity   = "0";
       spans[2].style.transform = "translateY(-6.5px) rotate(-45deg)";
-    } else {
-      spans.forEach(s => { s.style.transform = ""; s.style.opacity = ""; });
-    }
-  });
-}
 
-
-// ── Highlight active nav link ───────────────────────────────────────────────
-const path = window.location.pathname;
-document.querySelectorAll(".nav-link").forEach(link => {
-  const href = link.getAttribute("href");
-  if (href && (
-    path.endsWith(href) ||
-    (href === "./index.html" && (path === "/" || path.endsWith("index.html")))
-  )) {
-    link.classList.add("active");
-  } else {
-    link.classList.remove("active");
-  }
-});      spans[0].style.transform = "translateY(6.5px) rotate(45deg)";
-      spans[1].style.opacity   = "0";
-      spans[2].style.transform = "translateY(-6.5px) rotate(-45deg)";
+      // Position socials directly below the nav links panel
+      const navLinks = topnav.querySelector(".nav-links");
+      const socials  = topnav.querySelector(".nav-socials");
+      if (navLinks && socials) {
+        const linksPanelBottom = navLinks.getBoundingClientRect().bottom;
+        socials.style.top = linksPanelBottom + "px";
+      }
     } else {
       spans.forEach(s => { s.style.transform = ""; s.style.opacity = ""; });
     }
