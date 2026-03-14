@@ -1,78 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/sansserifflf" rel="stylesheet">
-                
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./index.css">
-    <title>About - Joe Langley</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Joe Langley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./about.css">
 </head>
 <body>
-    <div class="app">
-    <header class="header"> 
-  <div class="header-left">
-    <img src="./photos/profile_pic.png" alt="Joe Langley" class="profile-pic">
-    <div class="title-block">
-      <h1 id="typewriter-name">Joe F. Langley</h1>
-      <h2 id="typewriter-subtitle">Conservation Scientist</h2>
+
+  <!-- ── TOP NAV ── -->
+  <nav class="topnav">
+    <div class="nav-name">Joe F. Langley</div>
+    <ul class="nav-links">
+      <li><a href="./index.html" class="nav-link">Home</a></li>
+      <li><a href="./about.html" class="nav-link active">About</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-link" id="projects-toggle">Projects <span class="caret">▾</span></a>
+        <ul class="nav-dropdown" id="projects-dropdown">
+          <li><a href="./human_elephant_conflict.html">Human–Elephant Conflict</a></li>
+          <li><a href="./conflict_tree_of_life.html">Conflict Across the Tree of Life</a></li>
+          <li><a href="./protected_areas.html">Protected Areas</a></li>
+          <li><a href="./congo_peatlands.html">Congo Basin Peatlands</a></li>
+        </ul>
+      </li>
+      <li><a href="./publications.html" class="nav-link">Publications</a></li>
+      <li><a href="mailto:jfl49@cam.ac.uk" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="https://bsky.app/profile/joelangley9.bsky.social" target="_blank" title="Bluesky">
+        <img src="./photos/bluesky.svg" alt="Bluesky" class="social-svg">
+      </a>
+      <a href="https://www.instagram.com/joelangley_wildlife/" target="_blank" title="Instagram">
+        <img src="./photos/instagram.png" alt="Instagram" class="social-svg">
+      </a>
+      <a href="https://orcid.org/0009-0005-9686-6128" target="_blank" title="ORCID">
+        <img src="./photos/orcid.svg" alt="ORCID" class="social-svg">
+      </a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header">
+    <p class="page-header-label">About</p>
+    <h1 class="page-header-title">Joe F. Langley</h1>
+    <p class="page-header-sub">Conservation Scientist &nbsp;·&nbsp; University of Cambridge</p>
   </div>
 
-        <div class="header-right">
-            <a href="https://bsky.app/profile/joelangley9.bsky.social" target="_blank">
-                <img src="./photos/bluesky.svg" alt="Bluesky" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/joelangley_wildlife/" target="_blank">
-                <img src="./photos/instagram.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://orcid.org/0009-0005-9686-6128" target="_blank">
-                <img src="./photos/orcid.svg" alt="ORCID" class="social-icon">
-            </a>
+  <!-- ── MAIN CONTENT ── -->
+  <main class="about-main">
+
+    <!-- Photo + intro -->
+    <div class="about-top">
+      <div class="about-photo-wrap">
+        <img src="./photos/profile_pic.png" alt="Joe Langley" class="about-photo">
+      </div>
+      <div class="about-intro">
+        <h2 class="about-section-title">Research Focus</h2>
+        <p>My research spans human–wildlife conflict, movement ecology, and near-term conservation forecasting. I am particularly interested in when, where, and why different kinds of conflict emerge across time and space — and how these insights can inform wildlife management and conservation interventions. Much of my current work focuses on African elephants (<em>Loxodonta africana</em>) in South Africa, combining field ecology with quantitative methods and spatiotemporal modelling.</p>
+      </div>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- Education -->
+    <div class="about-section">
+      <h2 class="about-section-title">Education</h2>
+      <div class="about-edu-list">
+        <!-- Replace with your actual degrees -->
+        <div class="edu-item">
+          <span class="edu-year">2023 – Present</span>
+          <div class="edu-detail">
+            <p class="edu-degree">PhD, Conservation Science</p>
+            <p class="edu-inst">University of Cambridge</p>
+          </div>
         </div>
-    </header>
-
-        <div class="centre">
-            <div class="centre-left">
-                <a href="./index.html" class="nav-button">HOME</a>
-                <a href="./about.html" class="nav-button-active">ABOUT</a>
-
-                <!-- Projects main button -->
-                <a href="#" id="projects-button" class="nav-button">PROJECTS</a>
-                <div class="dropdown" id="projects-dropdown">
-                    <a href="./south_africa.html" class="nav-button">South Africa</a>
-                    <a href="./madagascar.html" class="nav-button">Madagascar</a>
-                    <a href="./congo.html" class="nav-button">Congo Basin</a>
-                    <a href="./ethiopia.html" class="nav-button">Ethiopia</a>
-                    <a href="./sierra_leone.html" class="nav-button">Sierra Leone</a>
-                    <a href="./united_kingdom.html" class="nav-button">United Kingdom</a>
-                    <a href="./global.html" class="nav-button">Global</a>
-                </div>
-
-                <a href="./publications.html" class="nav-button">PUBLICATIONS</a>
-                <a href="mailto:jfl49@cam.ac.uk" class="nav-button">CONTACT</a>
-            </div>
-
-            <!-- Main content for About page -->
-            <div class="main-content">
-                <p>
-                    I am a conservation scientist and PhD candidate at the University of Cambridge, 
-                    researching how to reconcile biodiversity conservation with the needs of human communities.
-                    My work focuses on human–wildlife conflict and landscape-scale conservation, applying 
-                    spatial and statistical modelling to integrate field observations, satellite imagery, and
-                    species movement data. Through this, I seek to predict where, when, and how people and wildlife
-                    are most likely to come into conflict, with a particular emphasis on African landscapes.
-
-                    I hold an MSc in Conservation from University College London and a BA in Geography from the 
-                    University of Exeter. I previously worked as a research assistant at the Royal Botanic Gardens, 
-                    Kew, and carried out fieldwork in South Africa and in the Congo Basin. I have also contributed 
-                    to conservation and research projects in Sierra Leone, Ethiopia, Madagascar, and the UK.
-
-                </p>
-            </div>
+        <div class="edu-item">
+          <span class="edu-year"><!-- Year --></span>
+          <div class="edu-detail">
+            <p class="edu-degree"><!-- Degree --></p>
+            <p class="edu-inst"><!-- Institution --></p>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <script src="./index.js"></script>
+    <hr class="about-divider">
+
+    <!-- Fieldwork -->
+    <div class="about-section">
+      <h2 class="about-section-title">Fieldwork &amp; Geography</h2>
+      <p class="about-field-intro"><!-- Add a sentence or two about your fieldwork experience here. --></p>
+      <div class="fieldwork-regions">
+        <div class="region-tag">South Africa</div>
+        <div class="region-tag">Congo Basin</div>
+        <div class="region-tag">Madagascar</div>
+        <div class="region-tag">Ethiopia</div>
+        <div class="region-tag">Sierra Leone</div>
+        <div class="region-tag">United Kingdom</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">Joe F. Langley</span>
+      <span class="footer-affil">University of Cambridge</span>
+      <span class="footer-copy">&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
 </body>
 </html>
