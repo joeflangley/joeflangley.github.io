@@ -144,13 +144,16 @@ ul { list-style: none; }
   border-left: 1px solid rgba(255,255,255,0.1);
 }
 .nav-socials a {
-  color: rgba(240,234,216,0.55);
-  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
 }
-.nav-socials a:hover { color: var(--parchment); }
+.nav-socials a:hover { opacity: 1; }
 .social-svg {
-  width: 17px; height: 17px;
+  width: 18px; height: 18px;
   display: block;
+  filter: brightness(0) saturate(100%) invert(95%) sepia(15%) saturate(300%) hue-rotate(10deg);
 }
 
 /* Hamburger (mobile) */
@@ -443,15 +446,21 @@ ul { list-style: none; }
     top: var(--nav-h);
     left: 0; right: 0;
     background: var(--charcoal);
-    padding: 1rem 1.5rem 2rem;
+    padding: 1rem 1.5rem 1.5rem;
     gap: 0;
     border-top: 1px solid rgba(255,255,255,0.06);
+    z-index: 99;
   }
   .topnav.mobile-open .nav-socials {
     display: flex;
     position: fixed;
-    top: calc(var(--nav-h) + 280px);
-    left: 1.5rem;
+    top: auto;
+    left: 0; right: 0;
+    padding: 1rem 1.5rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: var(--charcoal);
+    z-index: 99;
+    /* positioned just below the nav links — JS will handle this via a class */
   }
   .nav-link { padding: 0.7rem 0; font-size: 0.9rem; }
 
