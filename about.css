@@ -85,72 +85,37 @@
   margin: clamp(2.5rem, 5vw, 3.5rem) 0;
 }
 
-/* ── SECTION ── */
-.about-section p {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.85;
-  color: var(--ink);
-}
-
-/* ── EDUCATION ── */
-.about-edu-list {
+/* ── UPDATES ── */
+.updates-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0;
 }
-.edu-item {
+.update-item {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 1rem;
-  align-items: start;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--parchment-dk);
 }
-.edu-year {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  padding-top: 0.15rem;
-  white-space: nowrap;
+.update-item:first-child {
+  border-top: 1px solid var(--parchment-dk);
 }
-.edu-degree {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 0.95rem;
-  color: var(--charcoal);
-  margin-bottom: 0.2rem;
-}
-.edu-inst {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-
-/* ── FIELDWORK REGIONS ── */
-.about-field-intro {
-  margin-bottom: 1.25rem;
-}
-.fieldwork-regions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.region-tag {
+.update-date {
   font-family: var(--font-body);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--sage);
-  border: 1px solid var(--sage);
-  padding: 0.3rem 0.75rem;
-  border-radius: 2px;
-  transition: background 0.2s, color 0.2s;
+  color: var(--terracotta);
+  white-space: nowrap;
 }
-.region-tag:hover {
-  background: var(--sage);
-  color: var(--parchment);
+.update-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--ink);
 }
 
 /* ── RESPONSIVE ── */
@@ -162,8 +127,8 @@
     position: static;
     max-width: 180px;
   }
-  .edu-item {
+  .update-item {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: 0.35rem;
   }
 }
