@@ -31,21 +31,26 @@ if (hamburger && topnav) {
   hamburger.addEventListener("click", () => {
     const isOpen = topnav.classList.toggle("mobile-open");
     const spans  = hamburger.querySelectorAll("span");
-
     if (isOpen) {
       spans[0].style.transform = "translateY(6.5px) rotate(45deg)";
       spans[1].style.opacity   = "0";
       spans[2].style.transform = "translateY(-6.5px) rotate(-45deg)";
-
-      // Position socials directly below the nav links panel
-      const navLinks = topnav.querySelector(".nav-links");
-      const socials  = topnav.querySelector(".nav-socials");
-      if (navLinks && socials) {
-        const linksPanelBottom = navLinks.getBoundingClientRect().bottom;
-        socials.style.top = linksPanelBottom + "px";
-      }
     } else {
       spans.forEach(s => { s.style.transform = ""; s.style.opacity = ""; });
+    }
+  });
+}
+
+// ── Mobile: projects dropdown toggle ───────────────────────────────────────
+const projectsToggle   = document.getElementById("projects-toggle");
+const projectsDropdown = document.getElementById("projects-dropdown");
+
+if (projectsToggle && projectsDropdown) {
+  projectsToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    // On mobile, toggle inline; on desktop, CSS hover handles it
+    if (window.innerWidth <= 768) {
+      projectsDropdown.classList.toggle("mobile-open");
     }
   });
 }
