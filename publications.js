@@ -8,7 +8,46 @@ var ORCID_ID  = "0009-0005-9686-6128";
 var BASE      = "https://pub.orcid.org/v3.0/";
 var container = document.getElementById("pubs-list");
 
-// Fetch the works summary list first
+// Name variants to bold — add any others if needed
+var MY_NAMES = [
+  "Joe Langley",
+  "Joe F. Langley",
+  "J. F. Langley",
+  "J.F. Langley",
+  "J. Langley",
+  "Langley, J",
+  "Langley, J.",
+  "Langley, Joe",
+  "Langley, Joe F.",
+  "Langley, J. F.",
+  "Langley JF",
+  "Langley J"
+];
+
+function boldMyName(authorStr) {
+  var result = authorStr;
+  MY_NAMES.forEach(function(name) {
+    // Case-insensitive replace, wrap in <strong>
+    var regex = new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+    result = result.replace(regex, '<strong>$&</strong>');
+  });
+  return result;
+}
+
+// Map ORCID work types to readable source labels
+var TYPE_LABELS = {
+  "PREPRINT":             null, // handled by journal-title fallback
+  "JOURNAL_ARTICLE":      null,
+  "CONFERENCE_PAPER":     "Conference Paper",
+  "BOOK_CHAPTER":         "Book Chapter",
+  "BOOK":                 "Book",
+  "REPORT":               "Report",
+  "DISSERTATION":         "Thesis",
+  "DATA_SET":             "Dataset",
+  "SOFTWARE":             "Software",
+  "OTHER":                null
+};
+
 fetch(BASE + ORCID_ID + "/works", {
   headers: { "Accept": "application/json" }
 })
@@ -24,7 +63,6 @@ fetch(BASE + ORCID_ID + "/works", {
     return;
   }
 
-  // Build a list of put-codes to fetch full records
   var summaries = groups.map(function(group) {
     var s = group["work-summary"][0];
     return {
@@ -34,10 +72,8 @@ fetch(BASE + ORCID_ID + "/works", {
     };
   });
 
-  // Sort by year descending before fetching
   summaries.sort(function(a, b) { return b.year - a.year; });
 
-  // Fetch full record for each work (for author list)
   var fetches = summaries.map(function(s) {
     return fetch(BASE + ORCID_ID + "/work/" + s.putCode, {
       headers: { "Accept": "application/json" }
@@ -54,16 +90,22 @@ fetch(BASE + ORCID_ID + "/works", {
   works.forEach(function(w) {
     // Title
     var title = w.title && w.title.title
-                ? w.title.title.value
-                : "Untitled";
+                ? w.title.title.value : "Untitled";
 
     // Year
     var year = w["publication-date"] && w["publication-date"].year
-               ? w["publication-date"].year.value
-               : null;
+               ? w["publication-date"].year.value : null;
 
-    // Journal
-    var journal = w["journal-title"] ? w["journal-title"].value : null;
+    // Work type
+    var workType = w["work-type"] || null;
+
+    // Source/journal — fall back to type label if no journal title
+    var journal = null;
+    if (w["journal-title"] && w["journal-title"].value) {
+      journal = w["journal-title"].value;
+    } else if (workType && TYPE_LABELS[workType]) {
+      journal = TYPE_LABELS[workType];
+    }
 
     // Authors
     var authorList = [];
@@ -74,7 +116,9 @@ fetch(BASE + ORCID_ID + "/works", {
         }
       });
     }
-    var authorsStr = authorList.length > 0 ? authorList.join(", ") : null;
+    var authorsStr = authorList.length > 0
+      ? boldMyName(authorList.join(", "))
+      : null;
 
     // DOI
     var doi = null;
@@ -88,10 +132,10 @@ fetch(BASE + ORCID_ID + "/works", {
       ? '<a href="https://doi.org/' + doi + '" target="_blank" class="pub-doi">DOI →</a>'
       : '';
 
-    // Build meta line: journal · year · DOI
+    // Meta line
     var metaParts = [];
     if (journal) metaParts.push('<span class="pub-journal">' + journal + '</span>');
-    if (year)    metaParts.push('<span class="pub-year">' + year + '</span>');
+    if (year)    metaParts.push('<span class="pub-year">'    + year    + '</span>');
     if (doiLink) metaParts.push(doiLink);
 
     html += '<li class="pub-item">';
