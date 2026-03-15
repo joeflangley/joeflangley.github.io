@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title — Joe Langley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./project.css">
+</head>
+<body>
+
+  <!-- ── TOP NAV ── -->
+  <nav class="topnav">
+    <div class="nav-name">Joe F. Langley</div>
+    <ul class="nav-links">
+      <li><a href="./index.html" class="nav-link">Home</a></li>
+      <li><a href="./about.html" class="nav-link">About</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-link active" id="projects-toggle">Projects <span class="caret">▾</span></a>
+        <ul class="nav-dropdown" id="projects-dropdown">
+          <li><a href="./human_elephant_conflict.html">Human–Elephant Conflict</a></li>
+          <li><a href="./conflict_tree_of_life.html">Conflict Tree of Life</a></li>
+          <li><a href="./protected_areas.html">Protected Areas</a></li>
+          <li><a href="./congo_peatlands.html">Congo Basin Peatlands</a></li>
+        </ul>
+      </li>
+      <li><a href="./publications.html" class="nav-link">Publications</a></li>
+      <li><a href="mailto:jfl49@cam.ac.uk" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="https://bsky.app/profile/joelangley9.bsky.social" target="_blank" title="Bluesky">
+        <img src="./photos/bluesky.svg" alt="Bluesky" class="social-svg">
+      </a>
+      <a href="https://www.instagram.com/joelangley_wildlife/" target="_blank" title="Instagram">
+        <img src="./photos/instagram.png" alt="Instagram" class="social-svg">
+      </a>
+      <a href="https://orcid.org/0009-0005-9686-6128" target="_blank" title="ORCID">
+        <img src="./photos/orcid.svg" alt="ORCID" class="social-svg">
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li>
+        <button class="mobile-projects-toggle" id="mobile-projects-toggle">
+          Projects <span class="caret">▾</span>
+        </button>
+        <ul class="mobile-projects-list" id="mobile-projects-list">
+          <li><a href="./human_elephant_conflict.html">Human–Elephant Conflict</a></li>
+          <li><a href="./conflict_tree_of_life.html">Conflict Tree of Life</a></li>
+          <li><a href="./protected_areas.html">Protected Areas</a></li>
+          <li><a href="./congo_peatlands.html">Congo Basin Peatlands</a></li>
+        </ul>
+      </li>
+      <li><a href="./publications.html">Publications</a></li>
+      <li><a href="mailto:jfl49@cam.ac.uk">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-socials">
+      <a href="https://bsky.app/profile/joelangley9.bsky.social" target="_blank">
+        <img src="./photos/bluesky.svg" alt="Bluesky" class="social-svg">
+      </a>
+      <a href="https://www.instagram.com/joelangley_wildlife/" target="_blank">
+        <img src="./photos/instagram.png" alt="Instagram" class="social-svg">
+      </a>
+      <a href="https://orcid.org/0009-0005-9686-6128" target="_blank">
+        <img src="./photos/orcid.svg" alt="ORCID" class="social-svg">
+      </a>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="project-hero">
+    <img src="./photos/elephant_comp.jpeg" alt="Project hero image" class="project-hero-img">
+    <div class="project-hero-overlay">
+      <h1 class="project-hero-title">Forecasting Human-Elephant Conflict</h1>
+      <p class="project-hero-dates">2024 – PRESENT</p>
+    </div>
+  </div>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="project-main">
+
+    <!-- Overview -->
+    <section class="project-section">
+      <h2 class="project-section-title">Overview</h2>
+      <div class="project-body">
+        <p><!-- Add project description here. Can be multiple paragraphs. --></p>
+      </div>
+    </section>
+
+    <hr class="project-divider">
+
+    <!-- Study Area -->
+    <section class="project-section">
+      <h2 class="project-section-title">Study Area</h2>
+      <div class="project-body">
+        <p>Kruger National Park, South Africa</p>
+      </div>
+    </section>
+    
+    <hr class="project-divider">
+
+    <!-- Study Species -->
+    <section class="project-section">
+      <h2 class="project-section-title">Study Species</h2>
+      <div class="project-body">
+        <p><em>Class</em>: Aves</p>
+      </div>
+    </section>
+    
+    <hr class="project-divider">
+    
+    <!-- Collaborators -->
+    <section class="project-section">
+      <h2 class="project-section-title">Collaborators</h2>
+      <div class="collaborators-list">
+        
+        <div class="collaborator">
+          <p class="collaborator-name">Simon L. Lewis</p>
+          <p class="collaborator-affil">University College London & University of Leeds</p>
+        </div>
+
+        <div class="collaborator">
+          <p class="collaborator-name">Jan Axmacher</p>
+          <p class="collaborator-affil">University College London</p>
+        </div>
+
+        <div class="collaborator">
+          <p class="collaborator-name">Cassandra Dummett</p>
+          <p class="collaborator-affil">University College London</p>
+        </div>
+
+        <div class="collaborator">
+          <p class="collaborator-name">Shona J. Jenkins</p>
+          <p class="collaborator-affil">University of Edinburgh</p>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── BACK LINK ── -->
+  <div class="project-back">
+    <a href="./index.html" class="back-link">← All projects</a>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">Joe F. Langley</span>
+      <span class="footer-affil">University of Cambridge</span>
+      <span class="footer-copy">&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+</html>
