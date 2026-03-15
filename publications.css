@@ -70,7 +70,16 @@
   font-size: 0.98rem;
   color: var(--charcoal);
   line-height: 1.55;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.pub-authors {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
 }
 
 .pub-meta {
