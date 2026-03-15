@@ -1,13 +1,15 @@
 /* ══════════════════════════════════════
    publications.js
    Fetches works from ORCID public API
-   and renders them as a citation list.
+   including full author lists.
 ══════════════════════════════════════ */
 
-var ORCID_ID = "0009-0005-9686-6128";
+var ORCID_ID  = "0009-0005-9686-6128";
+var BASE      = "https://pub.orcid.org/v3.0/";
 var container = document.getElementById("pubs-list");
 
-fetch("https://pub.orcid.org/v3.0/" + ORCID_ID + "/works", {
+// Fetch the works summary list first
+fetch(BASE + ORCID_ID + "/works", {
   headers: { "Accept": "application/json" }
 })
 .then(function(res) {
@@ -22,62 +24,88 @@ fetch("https://pub.orcid.org/v3.0/" + ORCID_ID + "/works", {
     return;
   }
 
-  // Extract and sort by year descending
-  var works = groups.map(function(group) {
-    var summary = group["work-summary"][0];
-    var title   = summary.title && summary.title.title
-                  ? summary.title.title.value
-                  : "Untitled";
-    var year    = summary["publication-date"] && summary["publication-date"].year
-                  ? parseInt(summary["publication-date"].year.value)
-                  : 0;
-    var journal = summary["journal-title"]
-                  ? summary["journal-title"].value
-                  : null;
-    var type    = summary["work-type"] || null;
-
-    // Get DOI if available
-    var doi = null;
-    var ids = summary["external-ids"] && summary["external-ids"]["external-id"]
-              ? summary["external-ids"]["external-id"]
-              : [];
-    ids.forEach(function(id) {
-      if (id["external-id-type"] === "doi") {
-        doi = id["external-id-value"];
-      }
-    });
-
-    // Get contributor/author string from the group level
-    var authors = null;
-    var contribs = group["work-summary"][0]["source"]
-                   ? group["work-summary"][0]["source"]["source-name"]
-                   : null;
-
-    return { title: title, year: year, journal: journal, type: type, doi: doi };
+  // Build a list of put-codes to fetch full records
+  var summaries = groups.map(function(group) {
+    var s = group["work-summary"][0];
+    return {
+      putCode: s["put-code"],
+      year: s["publication-date"] && s["publication-date"].year
+            ? parseInt(s["publication-date"].year.value) : 0
+    };
   });
 
-  // Sort most recent first
-  works.sort(function(a, b) { return b.year - a.year; });
+  // Sort by year descending before fetching
+  summaries.sort(function(a, b) { return b.year - a.year; });
 
-  // Render
+  // Fetch full record for each work (for author list)
+  var fetches = summaries.map(function(s) {
+    return fetch(BASE + ORCID_ID + "/work/" + s.putCode, {
+      headers: { "Accept": "application/json" }
+    }).then(function(r) { return r.json(); });
+  });
+
+  return Promise.all(fetches);
+})
+.then(function(works) {
+  if (!works) return;
+
   var html = '<ol class="pubs-ol">';
+
   works.forEach(function(w) {
-    var link = w.doi
-      ? '<a href="https://doi.org/' + w.doi + '" target="_blank" class="pub-doi">DOI →</a>'
+    // Title
+    var title = w.title && w.title.title
+                ? w.title.title.value
+                : "Untitled";
+
+    // Year
+    var year = w["publication-date"] && w["publication-date"].year
+               ? w["publication-date"].year.value
+               : null;
+
+    // Journal
+    var journal = w["journal-title"] ? w["journal-title"].value : null;
+
+    // Authors
+    var authorList = [];
+    if (w.contributors && w.contributors.contributor) {
+      w.contributors.contributor.forEach(function(c) {
+        if (c["credit-name"] && c["credit-name"].value) {
+          authorList.push(c["credit-name"].value);
+        }
+      });
+    }
+    var authorsStr = authorList.length > 0 ? authorList.join(", ") : null;
+
+    // DOI
+    var doi = null;
+    var ids = w["external-ids"] && w["external-ids"]["external-id"]
+              ? w["external-ids"]["external-id"] : [];
+    ids.forEach(function(id) {
+      if (id["external-id-type"] === "doi") doi = id["external-id-value"];
+    });
+
+    var doiLink = doi
+      ? '<a href="https://doi.org/' + doi + '" target="_blank" class="pub-doi">DOI →</a>'
       : '';
-    var meta = [];
-    if (w.journal) meta.push('<span class="pub-journal">' + w.journal + '</span>');
-    if (w.year)    meta.push('<span class="pub-year">'    + w.year    + '</span>');
+
+    // Build meta line: journal · year · DOI
+    var metaParts = [];
+    if (journal) metaParts.push('<span class="pub-journal">' + journal + '</span>');
+    if (year)    metaParts.push('<span class="pub-year">' + year + '</span>');
+    if (doiLink) metaParts.push(doiLink);
 
     html += '<li class="pub-item">';
-    html +=   '<p class="pub-title">' + w.title + '</p>';
-    if (meta.length || link) {
-      html += '<p class="pub-meta">' + meta.join(' &middot; ') + (link ? ' &middot; ' + link : '') + '</p>';
+    html +=   '<p class="pub-title">' + title + '</p>';
+    if (authorsStr) {
+      html += '<p class="pub-authors">' + authorsStr + '</p>';
+    }
+    if (metaParts.length) {
+      html += '<p class="pub-meta">' + metaParts.join(' &middot; ') + '</p>';
     }
     html += '</li>';
   });
-  html += '</ol>';
 
+  html += '</ol>';
   container.innerHTML = html;
 })
 .catch(function(err) {
