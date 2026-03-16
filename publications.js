@@ -36,7 +36,7 @@ function boldMyName(authorStr) {
 
 // Map ORCID work types to readable source labels
 var TYPE_LABELS = {
-  "PREPRINT":             null, // handled by journal-title fallback
+  "PREPRINT":             "Preprint",
   "JOURNAL_ARTICLE":      null,
   "CONFERENCE_PAPER":     "Conference Paper",
   "BOOK_CHAPTER":         "Book Chapter",
