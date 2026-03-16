@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography — Joe Langley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./gallery.css">
+</head>
+<body>
+
+  <!-- ── TOP NAV ── -->
+  <nav class="topnav">
+    <div class="nav-name">Joe F. Langley</div>
+    <ul class="nav-links">
+      <li><a href="./index.html" class="nav-link">Home</a></li>
+      <li><a href="./about.html" class="nav-link">About</a></li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-link" id="projects-toggle">Projects <span class="caret">▾</span></a>
+        <ul class="nav-dropdown" id="projects-dropdown">
+          <li><a href="./human_elephant_conflict.html">Human–Elephant Conflict</a></li>
+          <li><a href="./conflict_tree_of_life.html">Conflict Tree of Life</a></li>
+          <li><a href="./protected_areas.html">Protected Areas</a></li>
+          <li><a href="./congo_peatlands.html">Congo Basin Peatlands</a></li>
+        </ul>
+      </li>
+      <li><a href="./publications.html" class="nav-link">Publications</a></li>
+      <li><a href="./gallery.html" class="nav-link active">Photography</a></li>
+      <li><a href="mailto:jfl49@cam.ac.uk" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="https://bsky.app/profile/joelangley9.bsky.social" target="_blank" title="Bluesky">
+        <img src="./photos/bluesky.svg" alt="Bluesky" class="social-svg">
+      </a>
+      <a href="https://www.instagram.com/joelangley_wildlife/" target="_blank" title="Instagram">
+        <img src="./photos/instagram.png" alt="Instagram" class="social-svg">
+      </a>
+      <a href="https://orcid.org/0009-0005-9686-6128" target="_blank" title="ORCID">
+        <img src="./photos/orcid.svg" alt="ORCID" class="social-svg">
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li>
+        <button class="mobile-projects-toggle" id="mobile-projects-toggle">
+          Projects <span class="caret">▾</span>
+        </button>
+        <ul class="mobile-projects-list" id="mobile-projects-list">
+          <li><a href="./human_elephant_conflict.html">Human–Elephant Conflict</a></li>
+          <li><a href="./conflict_tree_of_life.html">Conflict Tree of Life</a></li>
+          <li><a href="./protected_areas.html">Protected Areas</a></li>
+          <li><a href="./congo_peatlands.html">Congo Basin Peatlands</a></li>
+        </ul>
+      </li>
+      <li><a href="./publications.html">Publications</a></li>
+      <li><a href="./gallery.html">Photography</a></li>
+      <li><a href="mailto:jfl49@cam.ac.uk">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-socials">
+      <a href="https://bsky.app/profile/joelangley9.bsky.social" target="_blank">
+        <img src="./photos/bluesky.svg" alt="Bluesky" class="social-svg">
+      </a>
+      <a href="https://www.instagram.com/joelangley_wildlife/" target="_blank">
+        <img src="./photos/instagram.png" alt="Instagram" class="social-svg">
+      </a>
+      <a href="https://orcid.org/0009-0005-9686-6128" target="_blank">
+        <img src="./photos/orcid.svg" alt="ORCID" class="social-svg">
+      </a>
+    </div>
+  </div>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header">
+    <p class="page-header-label">Fieldwork &amp; Wildlife</p>
+    <h1 class="page-header-title">Photography</h1>
+  </div>
+
+  <!-- ── MASONRY GALLERY ── -->
+  <main class="gallery-main">
+    <div class="masonry-grid" id="masonry-grid">
+
+      <!-- ══════════════════════════════════════
+           TO ADD A PHOTO:
+           Copy one <figure> block, update the
+           src, and optionally add a caption.
+           ══════════════════════════════════════ -->
+
+      <figure class="masonry-item" data-src="./photos/BES_leopard.jpg">
+        <img src="./photos/BES_leopard.jpg" alt="Leopard" loading="lazy">
+        <figcaption>Leopard — South Africa</figcaption>
+      </figure>
+
+      <figure class="masonry-item" data-src="./photos/elephants1.png">
+        <img src="./photos/elephants1.png" alt="Elephants" loading="lazy">
+        <figcaption>African elephants — Kruger National Park</figcaption>
+      </figure>
+
+      <figure class="masonry-item" data-src="./photos/lion_cub.png">
+        <img src="./photos/lion_cub.png" alt="Lion cub" loading="lazy">
+        <figcaption>Lion cub — South Africa</figcaption>
+      </figure>
+
+      <figure class="masonry-item" data-src="./photos/giraffe.jpg">
+        <img src="./photos/giraffe.jpg" alt="Giraffe" loading="lazy">
+        <figcaption>Giraffe</figcaption>
+      </figure>
+
+      <figure class="masonry-item" data-src="./photos/cheetahs.png">
+        <img src="./photos/cheetahs.png" alt="Cheetahs" loading="lazy">
+        <figcaption>Cheetahs — South Africa</figcaption>
+      </figure>
+
+      <!-- Add more photos above this line -->
+
+    </div>
+  </main>
+
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next">&#8594;</button>
+    <div class="lightbox-inner">
+      <img src="" alt="" class="lightbox-img" id="lightbox-img">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">Joe F. Langley</span>
+      <span class="footer-affil">University of Cambridge</span>
+      <span class="footer-copy">&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
+  <script src="./gallery.js"></script>
+</body>
+</html>
